@@ -14,7 +14,8 @@ source:
     - rm-meta.patch
 
 build:
-  number: 1
+  number: 2
+  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -24,12 +25,12 @@ requirements:
     - cython
     - numpy
     - pip
-    - python
+    - python >=3.7
     - setuptools
   run:
     - h5py
     - {{ pin_compatible('numpy') }}
-    - python
+    - python >=3.7
     - python-dateutil
 
 test:
