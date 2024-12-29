@@ -22,14 +22,12 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - cython
-    - numpy
     - pip
     - python {{ python_min }}
     - setuptools
   run:
     - h5py
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - python >={{ python_min }}
     - python-dateutil
 
