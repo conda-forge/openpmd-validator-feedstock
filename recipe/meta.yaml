@@ -14,26 +14,24 @@ source:
     - rm-meta.patch
 
 build:
-  number: 2
+  number: 3
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
-    - {{ compiler('c') }}
   host:
-    - cython
-    - numpy
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
     - h5py
-    - {{ pin_compatible('numpy') }}
-    - python >=3.7
+    - numpy
+    - python >={{ python_min }}
     - python-dateutil
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - openpmd_validator
 
