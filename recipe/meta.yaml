@@ -19,8 +19,6 @@ build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
-    - {{ compiler('c') }}
   host:
     - pip
     - python {{ python_min }}
