@@ -9,9 +9,6 @@ source:
   fn: {{ version }}.tar.gz
   url: https://github.com/openPMD/openPMD-validator/archive/{{ version }}.tar.gz
   sha256: cc21d39b26a3658334d32f2a7401acd004700d022f23ef9a8f69e21e1f39b6d7
-  patches:
-    # remove checked-in meta.yaml file
-    - rm-meta.patch
 
 build:
   number: 0
